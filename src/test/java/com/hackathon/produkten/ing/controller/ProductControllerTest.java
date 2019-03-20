@@ -19,8 +19,8 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.hackathon.produkten.ing.controller.ProductsController;
 import com.hackathon.produkten.ing.dto.Overview;
+import com.hackathon.produkten.ing.dto.ProductDTO;
 import com.hackathon.produkten.ing.service.ProductsService;
 
 @RunWith(SpringRunner.class)
@@ -44,7 +44,7 @@ public class ProductControllerTest {
 		productMap1.put("name", "Orange savings account");
 		productNames.add(productMap);
 		productNames.add(productMap1);
-		List<Overview> list = new ArrayList();
+		List<Overview> list = new ArrayList<>();
 		Overview productOverview = new Overview("ProductGroup1", productNames);
 		Overview productOverview1 = new Overview("ProductGroup2", null);
 		list.add(productOverview);
@@ -55,9 +55,20 @@ public class ProductControllerTest {
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/products").accept(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		String expected = "[{\"id\":1,\"productName\":\"Savings\"},{\"id\":1,\"productName\":\"Payments\"}]";
         Assert.assertNotNull(result.getResponse());
-		// assertEquals("shivu", userdetails.getUserName());
+
+	}
+	
+	@Test
+	public void retrieveProductDetails() throws Exception {
+
+		ProductDTO productDTO = new ProductDTO();
+		productDTO.setProductName("product1");
+		productDTO.setPercentage("0.2%");
+		Mockito.when(prodService.getProductDetails(Mockito.anyString(),Mockito.anyString())).thenReturn(productDTO);
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/product/group1/product1").accept(MediaType.APPLICATION_JSON);
+		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        Assert.assertNotNull(result.getResponse());
 
 	}
 }

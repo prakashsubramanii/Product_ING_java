@@ -1,18 +1,20 @@
 insert into product_group (id,product_group_name) values (1,'Sparen') ON DUPLICATE KEY UPDATE id=1;
 insert into product_group (id,product_group_name) values (2,'Betalen') ON DUPLICATE KEY UPDATE id=2;
 insert into product_group (id,product_group_name) values (3,'Hypotheek') ON DUPLICATE KEY UPDATE id=3;
+insert into product_group (id,product_group_name) values (4,'Lenen') ON DUPLICATE KEY UPDATE id=4;
+insert into product_group (id,product_group_name) values (5,'Creditcard') ON DUPLICATE KEY UPDATE id=5;
 
 insert into product (id,product_name,product_group_id,deposit_and_withdrawal,duration,interest_rate,max_investment,min_investment,percentage,special) 
-values (1,'Oranjespaarrekening',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.03','Doelsparen optie') ON DUPLICATE KEY UPDATE id=1;
+values (1,'Oranjespaarrekening',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.03%','Doelsparen optie') ON DUPLICATE KEY UPDATE id=1;
 
 insert into product (id,product_name,product_group_id,deposit_and_withdrawal,duration,interest_rate,max_investment,min_investment,percentage,special) 
-values (2,'Groeigroterrekening',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.20','Spaarleeuw cadeau') ON DUPLICATE KEY UPDATE id=2;
+values (2,'Groeigroterrekening',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.20%','Spaarleeuw cadeau') ON DUPLICATE KEY UPDATE id=2;
 
 insert into product (id,product_name,product_group_id,deposit_and_withdrawal,duration,interest_rate,max_investment,min_investment,percentage,special) 
-values (3,'Spaarrekening voor Unicef',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.03','0,1% donatie aan Unicef') ON DUPLICATE KEY UPDATE id=3;
+values (3,'Spaarrekening voor Unicef',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.03%','0,1% donatie aan Unicef') ON DUPLICATE KEY UPDATE id=3;
 
 insert into product (id,product_name,product_group_id,deposit_and_withdrawal,duration,interest_rate,max_investment,min_investment,percentage,special) 
-values (4,'Bonusrenterekening',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.03','0,02% bonus na een jaar') ON DUPLICATE KEY UPDATE id=4;
+values (4,'Bonusrenterekening',1,'altijd mogelijk','onbepaald','variabel','geen','0','0.03%','0,02% bonus na een jaar') ON DUPLICATE KEY UPDATE id=4;
 
 insert into product (id,product_name,product_group_id,deposit_and_withdrawal,duration,interest_rate,max_investment,min_investment,percentage,special) 
 values (5,'Spaardeposito',1,'eenmalige inleg','5 of 10 jaar','vast','geen','500','zie ING.nl','-') ON DUPLICATE KEY UPDATE id=5;
@@ -29,6 +31,15 @@ insert into product (id,product_name,product_group_id) values (11,'Betaalrekenin
 insert into product (id,product_name,product_group_id) values (12,'Betaalpas',2) ON DUPLICATE KEY UPDATE id=12;
 insert into product (id,product_name,product_group_id) values (13,'Kwartaallimiet',2) ON DUPLICATE KEY UPDATE id=13;
 insert into product (id,product_name,product_group_id) values (14,'Continu limiet',2) ON DUPLICATE KEY UPDATE id=14;
+
+insert into product (id,product_name,product_group_id) values (15,'Doorlopend krediet',4) ON DUPLICATE KEY UPDATE id=15;
+insert into product (id,product_name,product_group_id) values (16,'Persoonlijke Lening',4) ON DUPLICATE KEY UPDATE id=16;
+insert into product (id,product_name,product_group_id) values (17,'Lening voor auto',4) ON DUPLICATE KEY UPDATE id=17;
+insert into product (id,product_name,product_group_id) values (18,'Lening voor verbouwing',4) ON DUPLICATE KEY UPDATE id=18;
+
+insert into product (id,product_name,product_group_id) values (19,'Creditcard',5) ON DUPLICATE KEY UPDATE id=19;
+insert into product (id,product_name,product_group_id) values (20,'Platinumcard',5) ON DUPLICATE KEY UPDATE id=20;
+insert into product (id,product_name,product_group_id) values (21,'Studenten Creditcard',5) ON DUPLICATE KEY UPDATE id=21;
 
 
 

@@ -68,6 +68,8 @@ public class ProductServiceTest {
 
 	@Test
 	public void getProductDetailsTest() {
+		ProductGroup productGroup = new ProductGroup();
+		productGroup.setProductGroupName("Mortgage");
 		Product product = new Product();
 		product.setProductName("Child Savings Scheme");
 		product.setDepositAndWithdrawal("Always possible");
@@ -77,6 +79,7 @@ public class ProductServiceTest {
 		product.setMinInvestment("0");
 		product.setPercentage("13.4");
 		product.setSpecial("");
+		Mockito.when(productGroupRepository.findByProductGroupName(Mockito.anyString())).thenReturn(productGroup);
 		Mockito.when(productRepository.findByProductGroupId(Mockito.anyString(), Mockito.anyLong()))
 				.thenReturn(product);
 

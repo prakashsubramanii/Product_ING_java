@@ -6,7 +6,7 @@ public class ProductDTO {
 
 	private Long id;
     private String productName;
-	private float percentage;
+	private String percentage;
 	private String interestRate;
 	private String special;
 	private String depositAndWithdrawal;
@@ -29,10 +29,10 @@ public class ProductDTO {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public float getPercentage() {
+	public String getPercentage() {
 		return percentage;
 	}
-	public void setPercentage(float percentage) {
+	public void setPercentage(String percentage) {
 		this.percentage = percentage;
 	}
 	public String getInterestRate() {
