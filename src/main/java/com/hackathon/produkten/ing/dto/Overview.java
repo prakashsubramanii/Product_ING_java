@@ -8,6 +8,8 @@ public class Overview {
 	private String productGroupName;
 	private List<Map<String,String>> products;
 	
+	public Overview() {}
+	
 	public Overview(String productGroupName, List<Map<String,String>> productNames) {
 		this.productGroupName=productGroupName;
 		this.products=productNames;
