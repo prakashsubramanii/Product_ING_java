@@ -1,7 +1,9 @@
 package com.hackathon.produkten.ing.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,12 +26,15 @@ public class ProductsServiceImpl implements ProductsService {
 		productGroupList.stream().forEach(p -> {
 			overViewList.add(new Overview(p.getProductGroupName(),getProductNamesFromGroup(p)));
 		});
-		 return null;
+		 return overViewList;
 	}
 
-	private List<String> getProductNamesFromGroup(ProductGroup p) {
-		List<String> productNames = new ArrayList<>();
-		p.getProduct().stream().forEach(n -> productNames.add(n.getProductName()));
+	private List<Map<String,String>> getProductNamesFromGroup(ProductGroup p) {
+		List<Map<String,String>> productNames = new ArrayList<>();
+		p.getProduct().stream().forEach(n ->{
+			Map<String,String> productMap = new HashMap();
+			productMap.put("name",n.getProductName());
+			productNames.add(productMap);});
 		return productNames;
 	}
 

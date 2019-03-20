@@ -1,13 +1,14 @@
 package com.hackathon.produkten.ing.dto;
 
 import java.util.List;
+import java.util.Map;
 
 public class Overview {
 	
 	private String productGroupName;
-	private List<String> products;
+	private List<Map<String,String>> products;
 	
-	public Overview(String productGroupName, List<String> productNames) {
+	public Overview(String productGroupName, List<Map<String,String>> productNames) {
 		this.productGroupName=productGroupName;
 		this.products=productNames;
 	}
@@ -17,10 +18,10 @@ public class Overview {
 	public void setProductGroupName(String productGroupName) {
 		this.productGroupName = productGroupName;
 	}
-	public List<String> getProducts() {
+	public List<Map<String,String>> getProducts() {
 		return products;
 	}
-	public void setProducts(List<String> products) {
+	public void setProducts(List<Map<String,String>> products) {
 		this.products = products;
 	}
 	
