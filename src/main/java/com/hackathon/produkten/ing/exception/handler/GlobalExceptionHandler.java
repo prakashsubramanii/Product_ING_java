@@ -8,17 +8,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-<<<<<<< HEAD
-/**
- * @author user1
- * Global Exception class for handling exceptions
- *
- */
-=======
+
 import com.hackathon.produkten.ing.exception.ExceptionResponse;
 
 
->>>>>>> 0cee6f64bbccc0f0762dce70b7880f476dac9283
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
