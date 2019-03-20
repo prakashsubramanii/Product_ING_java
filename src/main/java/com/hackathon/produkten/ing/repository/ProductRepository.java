@@ -11,5 +11,5 @@ import com.hackathon.produkten.ing.model.Product;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
 	@Query(value="SELECT * FROM product p where p.product_name = ?1 and product_group_id = ?2",nativeQuery=true)
-	public Product findByProductGroupId(String productName, String groupName);
+	public Product findByProductGroupId(String productName, Long groupId);
 }

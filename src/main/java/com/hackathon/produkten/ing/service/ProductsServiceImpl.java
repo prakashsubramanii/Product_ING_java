@@ -38,7 +38,8 @@ public class ProductsServiceImpl implements ProductsService {
 	
 	@Override
 	public ProductDTO getProductDetails(String productName, String groupName) {
-		Product product = productRepository.findByProductGroupId(productName,groupName);
+		
+		Product product = productRepository.findByProductGroupId(productName,productGroupRepository.findByProductGroupName().getId());
 		return convertToDTO(product);
 	}
 
