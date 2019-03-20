@@ -13,12 +13,15 @@ public class Product implements Serializable{
 	private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-	private Long productId;
-	public Long getProductId() {
-		return productId;
+	private Long id;
+    
+	private String productName;
+	
+	public Long getId() {
+		return id;
 	}
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setId(Long productId) {
+		this.id = productId;
 	}
 	public String getProductName() {
 		return productName;
@@ -26,5 +29,5 @@ public class Product implements Serializable{
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	private String productName;
+
 }

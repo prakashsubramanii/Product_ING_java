@@ -4,14 +4,18 @@ import java.util.List;
 
 public class Overview {
 	
-	private String productGroup;
+	private String productGroupName;
 	private List<String> products;
 	
-	public String getProductGroup() {
-		return productGroup;
+	public Overview(String productGroupName, List<String> productNames) {
+		this.productGroupName=productGroupName;
+		this.products=productNames;
 	}
-	public void setProductGroup(String productGroup) {
-		this.productGroup = productGroup;
+	public String getProductGroupName() {
+		return productGroupName;
+	}
+	public void setProductGroupName(String productGroupName) {
+		this.productGroupName = productGroupName;
 	}
 	public List<String> getProducts() {
 		return products;

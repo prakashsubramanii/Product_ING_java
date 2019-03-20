@@ -11,16 +11,16 @@ import javax.persistence.OneToMany;
 public class ProductGroup {
     @Id
 	private Long id;
-	private String productName;
+	private String productGroupName;
 	@OneToMany(cascade=CascadeType.ALL,orphanRemoval=true)
-	@JoinColumn(name="product_id")
+	@JoinColumn(name="product_group_id")
 	private List<Product> product;
 	
-	public String getProductName() {
-		return productName;
+	public String getProductGroupName() {
+		return productGroupName;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setProductGroupName(String productGroupName) {
+		this.productGroupName = productGroupName;
 	}
 	public List<Product> getProduct() {
 		return product;
