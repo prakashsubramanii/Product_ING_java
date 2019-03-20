@@ -3,6 +3,11 @@ package com.hackathon.produkten.ing.dto;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author user1
+ * DTO class for Overview
+ *
+ */
 public class Overview {
 	
 	private String productGroupName;

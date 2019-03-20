@@ -2,6 +2,11 @@ package com.hackathon.produkten.ing.dto;
 
 import java.util.List;
 
+/**
+ * @author user1
+ * DTO class for Product
+ *
+ */
 public class ProductDTO {
 
 	private Long id;

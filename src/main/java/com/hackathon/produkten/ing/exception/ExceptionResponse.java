@@ -2,6 +2,11 @@ package com.hackathon.produkten.ing.exception;
 
 import java.util.Date;
 
+/**
+ * @author user1
+ * Custom Exception class for handling exceptions
+ *
+ */
 public class ExceptionResponse {
 	
 	private Date timestamp;

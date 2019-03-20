@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author user1
+ * Model class for Analytics
+ *
+ */
 @Entity
 public class Analytics {
 

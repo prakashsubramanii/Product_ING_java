@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-
+/**
+ * @author user1
+ * Global Exception class for handling exceptions
+ *
+ */
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

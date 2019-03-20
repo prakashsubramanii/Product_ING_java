@@ -8,6 +8,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
+
+/**
+ * @author user1
+ * Model class for Product Groups
+ *
+ */
 public class ProductGroup {
     @Id
 	private Long id;

@@ -1,5 +1,10 @@
 package com.hackathon.produkten.ing.dto;
 
+/**
+ * @author user1
+ * DTO class for Analytics
+ *
+ */
 public class AnalyticsDTO {
 	private Long Id;
 	private String groupName;

@@ -17,6 +17,11 @@ import com.hackathon.produkten.ing.model.Product;
 import com.hackathon.produkten.ing.model.ProductGroup;
 import com.hackathon.produkten.ing.repository.ProductGroupRepository;
 import com.hackathon.produkten.ing.repository.ProductRepository;
+/**
+ * @author user1
+ * Product Service Implementation Class to get the Product Groups and Product details
+ *
+ */
 
 @Service
 public class ProductsServiceImpl implements ProductsService {
@@ -26,7 +31,11 @@ public class ProductsServiceImpl implements ProductsService {
 	
 	@Autowired
 	ProductRepository productRepository;
-
+	/**
+	 * @author user1
+	 * Method to list the group of available products
+	 *
+	 */
 	@Override
 	public List<Overview> getProductGroups() {
 		
@@ -37,7 +46,11 @@ public class ProductsServiceImpl implements ProductsService {
 		});
 		 return overViewList;
 	}
-	
+	/**
+	 * @author user1
+	 * Method to get the Product details
+	 *
+	 */
 	@Override
 	public ProductDTO getProductDetails(String productName, String groupName) {
 		

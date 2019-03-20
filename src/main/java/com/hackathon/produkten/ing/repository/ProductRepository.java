@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.hackathon.produkten.ing.model.Product;
 
+/**
+ * @author user1
+ * Repository Interface for ProductRepository
+ *
+ */
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
