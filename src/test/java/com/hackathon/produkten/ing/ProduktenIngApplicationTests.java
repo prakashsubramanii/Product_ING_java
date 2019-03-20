@@ -1,4 +1,4 @@
-package com.hackathon.producten.ing;
+package com.hackathon.produkten.ing;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
