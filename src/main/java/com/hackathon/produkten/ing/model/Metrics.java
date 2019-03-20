@@ -1,9 +1,19 @@
-package com.hackathon.produkten.ing.dto;
+package com.hackathon.produkten.ing.model;
 
-public class AnalyticsDTO {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Metrics {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long Id;
 	private String groupName;
 	private Long visitCount;
+	
 	
 	public Long getId() {
 		return Id;
@@ -23,7 +33,6 @@ public class AnalyticsDTO {
 	public void setVisitCount(Long visitCount) {
 		this.visitCount = visitCount;
 	}
-	
 	
 	
 }
