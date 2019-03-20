@@ -3,18 +3,25 @@ package com.hackathon.produkten.ing.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hackathon.produkten.ing.dto.Overview;
+import com.hackathon.produkten.ing.dto.ProductDTO;
+import com.hackathon.produkten.ing.model.Product;
 import com.hackathon.produkten.ing.model.ProductGroup;
 import com.hackathon.produkten.ing.repository.ProductGroupRepository;
+import com.hackathon.produkten.ing.repository.ProductRepository;
 
 @Service
 public class ProductsServiceImpl implements ProductsService {
 	
 	@Autowired
 	ProductGroupRepository productGroupRepository;
+	
+	@Autowired
+	ProductRepository productRepository;
 
 	@Override
 	public List<Overview> getProductGroups() {
@@ -26,11 +33,24 @@ public class ProductsServiceImpl implements ProductsService {
 		});
 		 return null;
 	}
+	
+	@Override
+	public ProductDTO getProductDetails(String productName, String groupName) {
+		Product product = productRepository.findByProductGroupId(productName,groupName);
+		return convertToDTO(product);
+	}
 
 	private List<String> getProductNamesFromGroup(ProductGroup p) {
 		List<String> productNames = new ArrayList<>();
 		p.getProduct().stream().forEach(n -> productNames.add(n.getProductName()));
 		return productNames;
+	}
+	
+	private ProductDTO convertToDTO(Product product) {
+		
+		ModelMapper modelMapper = new ModelMapper();
+		return modelMapper.map(product, ProductDTO.class);
+		
 	}
 
 }
