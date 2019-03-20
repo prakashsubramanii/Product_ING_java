@@ -11,7 +11,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
-public class Analytics {
+public class Metrics {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

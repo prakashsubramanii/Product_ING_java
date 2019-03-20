@@ -1,11 +1,15 @@
 package com.hackathon.produkten.ing.dto;
 
+<<<<<<< HEAD:src/main/java/com/hackathon/produkten/ing/dto/AnalyticsDTO.java
 /**
  * @author user1
  * DTO class for Analytics
  *
  */
 public class AnalyticsDTO {
+=======
+public class MetricsDTO {
+>>>>>>> 0cee6f64bbccc0f0762dce70b7880f476dac9283:src/main/java/com/hackathon/produkten/ing/dto/MetricsDTO.java
 	private Long Id;
 	private String groupName;
 	private Long visitCount;

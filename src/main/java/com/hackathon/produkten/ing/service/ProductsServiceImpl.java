@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,7 +71,7 @@ public class ProductsServiceImpl implements ProductsService {
 	private List<Map<String,String>> getProductNamesFromGroup(ProductGroup p) {
 		List<Map<String,String>> productNames = new ArrayList<>();
 		p.getProduct().stream().forEach(n ->{
-			Map<String,String> productMap = new HashMap();
+			Map<String,String> productMap = new HashMap<>();
 			productMap.put("name",n.getProductName());
 			productNames.add(productMap);});
 		return productNames;
