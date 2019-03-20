@@ -14,7 +14,7 @@ public class Product implements Serializable{
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
     private String productName;
-	private float percentage;
+	private String percentage;
 	private String interestRate;
 	private String special;
 	private String depositAndWithdrawal;
@@ -34,10 +34,10 @@ public class Product implements Serializable{
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public float getPercentage() {
+	public String getPercentage() {
 		return percentage;
 	}
-	public void setPercentage(float percentage) {
+	public void setPercentage(String percentage) {
 		this.percentage = percentage;
 	}
 	public String getInterestRate() {

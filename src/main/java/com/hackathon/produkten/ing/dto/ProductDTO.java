@@ -1,5 +1,7 @@
 package com.hackathon.produkten.ing.dto;
 
+import java.util.List;
+
 public class ProductDTO {
 
 	private Long id;
@@ -11,6 +13,7 @@ public class ProductDTO {
 	private String minInvestment;
 	private String maxInvestment;
 	private String duration;
+	private List<String> otherProducts;
 	
 	public ProductDTO() {}
 	
@@ -68,6 +71,13 @@ public class ProductDTO {
 	public void setDuration(String duration) {
 		this.duration = duration;
 	}
-	
+
+	public List<String> getOtherProducts() {
+		return otherProducts;
+	}
+
+	public void setOtherProducts(List<String> otherProducts) {
+		this.otherProducts = otherProducts;
+	}
 	
 }

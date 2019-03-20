@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +41,20 @@ public class ProductsServiceImpl implements ProductsService {
 	@Override
 	public ProductDTO getProductDetails(String productName, String groupName) {
 		
-		Product product = productRepository.findByProductGroupId(productName,productGroupRepository.findByProductGroupName().getId());
-		return convertToDTO(product);
+		ProductGroup productGroup = productGroupRepository.findByProductGroupName(groupName);
+		
+		Product product = productRepository.findByProductGroupId(productName,productGroup.getId());
+		ProductDTO productDTO =convertToDTO(product);
+		List<String> productNameList = new ArrayList<>();
+		productGroup.getProduct()
+		.stream()
+		.forEach(
+				(p)->{
+					if(!p.getProductName().equalsIgnoreCase(productName))
+						productNameList.add(p.getProductName());
+						});
+		productDTO.setOtherProducts(productNameList);
+		return productDTO;
 	}
 
 	private List<Map<String,String>> getProductNamesFromGroup(ProductGroup p) {

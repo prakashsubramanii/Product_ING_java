@@ -49,7 +49,7 @@ public class ProductServiceTest {
 		product.setInterestRate("fixed");
 		product.setMaxInvestment("none");
 		product.setMinInvestment("0");
-		product.setPercentage(13.4f);
+		product.setPercentage("13.4");
 		product.setSpecial("");
 		
 		products.add(product);

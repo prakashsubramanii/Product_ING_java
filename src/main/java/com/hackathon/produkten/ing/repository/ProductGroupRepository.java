@@ -8,5 +8,5 @@ import com.hackathon.produkten.ing.model.ProductGroup;
 @Repository
 public interface ProductGroupRepository extends JpaRepository<ProductGroup, Long> {
 
-	public ProductGroup findByProductGroupName();
+	public ProductGroup findByProductGroupName(String productGroupName);
 }
